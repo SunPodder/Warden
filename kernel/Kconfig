@@ -1,0 +1,9 @@
+config SECURITY_WARDEN
+		bool "Warden Security Module"
+		depends on SECURITY
+		default n
+		help
+			Warden is a Linux Security Module that provides runtime permission
+			management for applications. It allows fine-grained control over what
+			resources applications can access, enhancing system security.
+			For more information, visit: https://github.com/SunPodder/Warden
