@@ -1,0 +1,24 @@
+diff --git a/security/Kconfig b/security/Kconfig
+index 285f284df..20bcc2ec2 100644
+--- a/security/Kconfig
++++ b/security/Kconfig
+@@ -220,6 +220,7 @@ config STATIC_USERMODEHELPER_PATH
+ 	  If you wish for all usermode helper programs to be disabled,
+ 	  specify an empty string here (i.e. "").
+ 
++source "security/warden/Kconfig"
+ source "security/selinux/Kconfig"
+ source "security/smack/Kconfig"
+ source "security/tomoyo/Kconfig"
+diff --git a/security/Makefile b/security/Makefile
+index 22ff4c8bd..188732b41 100644
+--- a/security/Makefile
++++ b/security/Makefile
+@@ -26,6 +26,7 @@ obj-$(CONFIG_CGROUPS)			+= device_cgroup.o
+ obj-$(CONFIG_BPF_LSM)			+= bpf/
+ obj-$(CONFIG_SECURITY_LANDLOCK)		+= landlock/
+ obj-$(CONFIG_SECURITY_IPE)		+= ipe/
++obj-$(CONFIG_SECURITY_WARDEN)		+= warden/
+ 
+ # Object integrity file lists
+ obj-$(CONFIG_INTEGRITY)			+= integrity/
