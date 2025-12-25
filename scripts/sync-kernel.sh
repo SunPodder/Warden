@@ -8,7 +8,7 @@ DEST_DIR="$(get_root_dir)/linux"
 PATCH_FILE="$(dirname "$0")/linux.patch"
 
 if [ -d "$DEST_DIR" ]; then
-	print_err "Directory $DEST_DIR already exists. Skipping clone."
+	print_info "Directory $DEST_DIR already exists. Skipping clone."
 else
 	print_info "Cloning Linux kernel repository (tag: $TAG) into $DEST_DIR..."
 	if ! git clone --depth 1 --branch "$TAG" "$REPO_URL" "$DEST_DIR" > /dev/null 2>&1; then

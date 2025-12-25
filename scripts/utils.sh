@@ -1,9 +1,19 @@
+#!/bin/bash
+
+print_success() {
+    printf "[✓] %s%s%s\n" "$(tput setaf 2)" "$1" "$(tput sgr0)"
+}
+
 print_err() {
-    printf "$(tput setaf 1)$1$(tput sgr0)\n" >&2
+    printf "[✗] %s%s%s\n" "$(tput setaf 1)" "$1" "$(tput sgr0)" >&2
 }
 
 print_info() {
-    printf "$(tput setaf 2)$1$(tput sgr0)\n"
+    printf "[*] %s%s%s\n" "$(tput setaf 4)" "$1" "$(tput sgr0)"
+}
+
+print_warn() {
+    printf "[!] %s%s%s\n" "$(tput setaf 3)" "$1" "$(tput sgr0)" >&2
 }
 
 get_script_dir() {
